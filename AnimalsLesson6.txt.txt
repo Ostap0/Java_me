@@ -1,0 +1,178 @@
+ import java.util.*;
+
+interface Animals{
+    void speak();
+}
+
+    interface Predator{
+    void eat();
+}
+
+
+public abstract class Main implements Animals,Predator{
+
+
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        Wolf wolf = new Wolf();
+        Lion lion = new Lion();
+
+
+         System.out.println("hi, I'm " + dog.name + " and I have " +  dog.color + " color"  );
+         dog.speak();
+         System.out.println("hi, I'm " + wolf.name + " and I have " +  wolf.color + " color"  );
+         wolf.speak(); wolf.getColor();
+         System.out.println("hi, I'm " + lion.name + " and I have " + lion.color + " color"  );
+         lion.speak(); lion.eat();
+
+        ArrayList<String> name = new ArrayList<String>();
+
+        name.add("Wolf");
+        name.add("Dog");
+        name.add("Lion");
+        name.add("Cat");
+
+        Collections.sort(name);
+        System.out.println(" Alphabet Sorting:");
+        for(String counter: name){
+            System.out.println(counter);
+        }
+
+       Cat cat = new Cat();
+     Cat cat1=foo(cat);
+
+     cat.Setname("CAT");
+     cat1.setName("small cat");
+
+        System.out.println(cat.getName());
+        System.out.println(cat1.getName());
+    }
+
+    public static Cat foo(Cat cat1){
+        Cat smallcat = null;
+
+        try {
+             smallcat = (Cat) cat1.clone();
+        }
+        catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
+
+        return smallcat;
+    }
+}
+
+
+
+
+ class Dog extends Main  {
+
+     public String name;
+     {
+         this.name = "dog Соня";
+     }
+     public String color;
+     {
+         this.color = "Білий";
+     }
+
+     @Override
+     public void speak(){
+         System.out.println("gaw");
+     }
+
+     @Override
+     public  void eat() {
+         System.out.println("Im eating");
+     }
+
+
+ }
+
+
+
+
+
+
+     class Wolf extends Main  {
+
+
+         public String color;
+
+         {
+             this.color ="Чорний";
+         }
+
+         public String name;
+             {
+             this.name = "cat Барсик";
+         }
+
+         public final String getColor() {
+             return color;
+         }
+
+
+         @Override
+         public void speak() {
+             System.out.println("meow");
+         }
+         @Override
+         public void eat(){
+             System.out.println("I'm eating...");
+         }
+     }
+
+
+
+
+
+
+
+class Lion extends Main{
+    public String color;
+
+    {
+        this.color ="Жовтий";
+    }
+
+    public String name;
+    {
+        this.name = "Лев";
+    }
+
+
+    @Override
+    public  void speak() {
+        System.out.println(".....");
+    }
+
+    @Override
+    public final void eat() {
+        System.out.println("I'm eating...");
+    }
+}
+
+
+
+    class Cat implements Cloneable {
+    private String name;
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+        @Override
+        public Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
+
+        public void Setname(String cat) {
+
+        }
+    }
+
