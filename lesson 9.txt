@@ -14,7 +14,9 @@ public class myException {
         catch (Exception myError){
             System.out.println("Ділити на нуль неможна");
         }
-   
+    finally {
+            System.out.println("Програма завершина");
+        }
     }
 
 }
