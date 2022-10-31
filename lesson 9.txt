@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class myException {
+    public static void main (String[] args){
+
+        int x = new Scanner(System.in).nextInt();
+        int y = new Scanner(System.in).nextInt();
+
+        try{
+    double res = x/y;
+            System.out.println(res);
+
+        }
+        catch (Exception myError){
+            System.out.println("Ділити на нуль неможна");
+        }
+   
+    }
+
+}
